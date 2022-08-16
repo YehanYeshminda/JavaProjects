@@ -11,7 +11,7 @@ public class Email {
     private String lName;
     private String password;
     private String department;
-    private int mailBoxCapacity;
+    private int mailBoxCapacity = 200;
     private String alternateEmail;
     private String email;
     private String companySuffix = "esoft.com";
@@ -89,10 +89,24 @@ public class Email {
         return new String(password);
     }
 
+
     // set the mailbox capacity
+    public void setMailBoxCapacity(int capacity) { this.mailBoxCapacity = capacity; }
 
     // set the alternate email
+    public void setAlternateEmail(String emailAlt) { this.alternateEmail = emailAlt; }
 
     // change the password
+    public void changePassword(String pass) { this.password = pass; }
 
+    // this below is data binding or data encapsulation
+
+    // showing the mailbox capacity with a get method
+    public int getMailBoxCapacity() { return mailBoxCapacity;}
+
+    // getting the alternate email and then returning it
+    public String getAlternateEmail() { return "Alternate email : " + alternateEmail;}
+
+    // getting the password and then returning it
+    public String getPassword() { return "Password : " + password; }
 }
