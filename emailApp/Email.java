@@ -25,7 +25,7 @@ public class Email {
         this.fName = firstName;
         this.lName = lastName;
 
-        System.out.println("Email made for " + this.fName + " " +this.lName);
+      //  System.out.println("Email made for " + this.fName + " " +this.lName);
 
         // after taking the names call a method to get the department
         this.department = setDepartment();
@@ -33,13 +33,13 @@ public class Email {
         System.out.println("The department is: " + this.department );
 
         // after taking the names and the departments we call a method which returns a random password
-        this.password = randomPassword(10);
+       // this.password = randomPassword(10);
 
         // combine all the elements and then define the email
         this.email = fName.toLowerCase() +"."+ lName.toLowerCase()+"@"+department+"."+companySuffix;
 
-        System.out.println("Your Email is : "+ this.email);
-        System.out.println("Your Password is : " + this.password);
+      //  System.out.println("Your Email is : "+ this.email);
+     //   System.out.println("Your Password is : " + this.password);
     }
 
     // ask for the department
@@ -109,4 +109,9 @@ public class Email {
 
     // getting the password and then returning it
     public String getPassword() { return "Password : " + password; }
+
+    // method to show all the information which is being entered in a correct order
+    public String showInformation(){
+        return "Display Name : " + this.fName + " " + this.lName + "\nEmail : " + this.email + "\nMailbox Capacity : " + this.mailBoxCapacity;
+    }
 }

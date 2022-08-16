@@ -12,5 +12,7 @@ public class EmailApp {
 
 //        email1.setAlternateEmail("broommmm");
 //        System.out.println(email1.getAlternateEmail());
+
+        System.out.println(email1.showInformation());
     }
 }
