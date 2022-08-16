@@ -1,6 +1,7 @@
 package emailApp;
 
 // import used to get import
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Email {
@@ -12,6 +13,9 @@ public class Email {
     private String department;
     private int mailBoxCapacity;
     private String alternateEmail;
+    private String email;
+    private String companySuffix = "esoft.com";
+
 
     // constructor to receive first name and the lastname
     public Email(String firstName, String lastName){
@@ -30,7 +34,12 @@ public class Email {
 
         // after taking the names and the departments we call a method which returns a random password
         this.password = randomPassword(10);
-        System.out.println("Password : " + this.password);
+
+        // combine all the elements and then define the email
+        this.email = fName.toLowerCase() +"."+ lName.toLowerCase()+"@"+department+"."+companySuffix;
+
+        System.out.println("Your Email is : "+ this.email);
+        System.out.println("Your Password is : " + this.password);
     }
 
     // ask for the department
@@ -47,16 +56,16 @@ public class Email {
 
         // validating the user input for a division
         if (choiceDepartment == 1){
-            return "Sales";
+            return "sales";
         }
         else if (choiceDepartment == 2){
-            return "Development";
+            return "development";
         }
         else if (choiceDepartment == 3){
-            return "Accounting";
+            return "accounting";
         }
         else{
-            return "None";
+            return "none";
         }
     }
 
