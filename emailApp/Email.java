@@ -27,6 +27,10 @@ public class Email {
         this.department = setDepartment();
 
         System.out.println("The department is: " + this.department );
+
+        // after taking the names and the departments we call a method which returns a random password
+        this.password = randomPassword(10);
+        System.out.println("Password : " + this.password);
     }
 
     // ask for the department
@@ -56,7 +60,25 @@ public class Email {
         }
     }
 
+
     // generate a random password
+    private String randomPassword(int length) { // length is on how long the password should be
+        String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!#$%&*";
+        char[] password = new char[length]; // will equal to array of characters on the size of length
+
+        for (int i = 0; i < length; i++){
+
+            // make it an int and then store it in a variable
+            // math . random = 0 and 1 * the size of the passwordSet
+            int randomValue  = (int) (Math.random() * passwordSet.length());
+
+            // the index at i in the password array will equal to the character the random value in the array
+            password[i] = passwordSet.charAt(randomValue);
+        }
+
+        // passing the password as a string as a new string everytime this function is called
+        return new String(password);
+    }
 
     // set the mailbox capacity
 
