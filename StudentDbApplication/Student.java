@@ -63,8 +63,16 @@ public class Student {
     }
 
     // view balance
+    public void viewBalance(){
+        System.out.println("Your balance is : $"+ this.tuitionBalance);
+    }
 
     // pay tuition
+    public void payTuition(int payment){
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for the payment of : $" + payment);
+        viewBalance();
+    }
 
     // show status
 }

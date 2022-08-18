@@ -7,9 +7,6 @@ public class StudentDatabaseApp {
 
         Student student = new Student();
         student.enrollCourses();
-        // ask how many students need to be added
-
-        // create a loop for the students needed to be added
-
+        student.payTuition(500);
     }
 }
