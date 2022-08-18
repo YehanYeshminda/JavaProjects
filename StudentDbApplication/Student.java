@@ -7,14 +7,16 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private String studentId;
-    private String courses;
-    private int tuitionBalance;
+    private String courses = null;
+    private int tuitionBalance = 0; // in order to add to this we make this 0
     private static int costOfCourse = 1000; // this belongs to the class not the instance
     private static int id = 1000; // this belongs to the class not the instance
 
+    Scanner input = new Scanner(System.in);
+
     // prompts the user to enter the student name and year
     public Student(){
-        Scanner input = new Scanner(System.in);
+
 
         System.out.print("Enter Student First Name: ");
         this.firstName = input.next();
@@ -26,7 +28,7 @@ public class Student {
         this.gradeYear = input.nextInt();
 
         setStudentId();
-        System.out.println("First Name : "+ firstName + "\nLast name: " + lastName +"\nGrade Year: "+ gradeYear +"\nStudent ID: "+ studentId);
+        System.out.println(" "+ firstName + " " + lastName +" "+ gradeYear +" "+ studentId);
 
     }
 
@@ -38,6 +40,27 @@ public class Student {
     }
 
     // enroll in the courses
+    public void enrollCourses(){
+
+        do {
+            System.out.print("Enter course to enroll :  (Q to Quit)");
+            String course = input.next().toLowerCase();
+
+            if (!course.equals("q")){
+                courses = courses + "\n" + course;
+                tuitionBalance = tuitionBalance + costOfCourse;
+            }
+            else{
+
+                // if the inserted string is q then we break from the loop
+                break;
+            }
+        } while (1 != 0); // which means forever
+
+
+        System.out.println("Enrolled in : "+ courses);
+        System.out.println("Tuition Balance : "+ tuitionBalance);
+    }
 
     // view balance
 
